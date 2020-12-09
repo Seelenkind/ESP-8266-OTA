@@ -1,0 +1,18 @@
+Kod içerisinde yorumlarda anlaşıldığı üzeri OTA ile ESP'ye kod yüklemek oldukça basit. 
+İlk önce WiFi'ye bağlanmak için gerekli kütüphaneleri yüklüyoruz ki, zaten ESP kullanıyorsanız bunu büyük ihtimalle yapmışınızdır. 
+Sonra OTA üzeri kod yükleyebilmek için ArduinoOTA kütüphanesini Arduino IDE içerisinden ekliyoruz. Bu kütüphane ile birlikte OTA için kullanabileceğimiz bir sürü yeni komut (fonksiyon) eklenmekte. Bize gerekli olanlar ise oldukça az. 
+Bu fonksiyonları void setup() { .. } içerisinde kurulum için herhangi bir yere yerleştirmemiz yeterli olacaktır
+setHostname ile modeme bağlanıp ip numarası alan ESP'ye bir isim verebiliriz. BU şekilde bağlı olan ESP'leri birbirinden ayırt edebilmemiz kolay olur.
+ArduinoOTA.setHostname("istediğiniz ismi verebilirsiniz");
+setPassword ile WiFi ağınızda gözüken ESP'ye sizden başkasının kod yüklemesini engellemek için şifre verebilirsiniz. Bu size kalmış bir opsiyondur. 
+ArduinoOTA.setPassword("sizin belirlediğiniz bir şifre");
+begin ile OTA bekleme işlemini başlatıyoruz
+ArduinoOTA.begin();
+
+Setup içerisinde kurulumu yaptıktan sonra void loop() içerisinde sadece bir satır kod ile OTA üzeri gelen kodun aktüalize edilmesini sağlamış olacağız. 
+ ArduinoOTA.handle();
+
+kodun diğer kısmı sizin ihtiyacınıza göre zaten yazmış oldunuz kesimlerdir. 
+ESP'yi OTA üzeri update edebilmek için bu satırları kodumuza ekledikten sonra bir kez USB kablo ile ve bilindik üzeri port seçerek yüklemek ve kod yüklendikten sonra yeniden başlamasını sağlamak yeterli olacaktır. 
+Artık Kod yüklemek için diğer fotoğraflarda tarif edildiği üzere COM port yerinden ip numarası ve Host Name'i gözüken ESP'yi seçip gönder tuşuna basmak yeterli olacaktır. 
+
