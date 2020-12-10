@@ -3,8 +3,8 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 
-const char* ssid = "FRITZ!Box 6490 Cable";
-const char* password = "42011226516608002284";
+const char* ssid = "xxx";
+const char* password = "zzz";
 
 uint8_t i;
 bool ConnectionEstablished; // Flag for successfully handled connection
