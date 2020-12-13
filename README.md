@@ -3,4 +3,4 @@ ESP01 , Wemos D1 , NodeMCU gibi ESP8266 tabanlı boardlar için OTA (Over The Ai
 
 wiki sayfasında tüm anlatım 
 
-https://github.com/Seelenkind/ESP-8266-OTA/wiki/ESP-01---Wemos-D1---NodeMCU-OTA-update
+https://github.com/Seelenkind/ESP-8266-OTA/wiki/ESP-8266-kartlara-OTA-(Over-The-Air)-%C3%BCzeri-firmware-y%C3%BCkleme
